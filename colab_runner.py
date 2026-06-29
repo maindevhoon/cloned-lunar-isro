@@ -141,20 +141,9 @@ def run_everything():
     _run_crater_standalone()
     _run_rl_standalone()
     _run_formation_standalone()
-    print("\nAll done! Upload the full main.py files for the richer versions.")
-    print("For real physics → NVIDIA Isaac Sim")
-
-
-def run_everything():
-    print("\n" + "="*55)
-    print("LUNAR 2024 - COLAB RUNNER (standalone mode)")
-    print("="*55)
-    _run_roi_standalone()
-    _run_crater_standalone()
-    _run_rl_standalone()
-    _run_formation_standalone()
-    print("\nAll done! For richer versions, you can also %run the individual main.py files.")
-    print("For real physics, wheel-terrain interaction, sensors etc. → use NVIDIA Isaac Sim")
+    print("\nAll done!")
+    print("For richer versions, %run the individual main.py files (e.g. %run path-feedback-rl/main.py)")
+    print("For realistic physics + sensors → NVIDIA Isaac Sim")
 
 
 if __name__ == "__main__":
