@@ -1,23 +1,23 @@
 """
 colab_runner.py
-One-file entry point for the reconstructed Lunar 2024 code.
+One-file entry point for the reconstructed Lunar 2024 ISRO project.
 
-Copy this entire file into a Colab cell or upload it, then run:
+Best usage after cloning from GitHub (recommended):
 
-    !pip install gymnasium torch numpy matplotlib opencv-python-headless scikit-learn scipy
+    !git clone https://github.com/maindevhoon/cloned-lunar-isro.git
+    %cd cloned-lunar-isro
+    !pip install -q -r requirements.txt
 
     import colab_runner
     colab_runner.run_everything()
 
-This will execute demos for:
+This runs standalone demos for:
 - ROI identification (hyperspectral)
 - Crater / obstacle detection
 - RL + simple physics path planning
 - Multi-rover path formation
 
-Note: The original "realistic physics" was marketing. This version adds a
-basic Newtonian rover physics environment. For high-fidelity physics,
-sensors, lighting, and regolith, use NVIDIA Isaac Sim.
+The main.py files contain richer versions if you want to %run them individually.
 """
 
 # =============================================================================
@@ -146,42 +146,15 @@ def run_everything():
 
 
 def run_everything():
-    print("\n" + "="*60)
-    print("LUNAR 2024 RECONSTRUCTED PIPELINE - COLAB RUNNER")
-    print("="*60 + "\n")
-
-    if run_roi_demo:
-        print("\n[1/4] Running ROI Identification (Hyperspectral)...")
-        try:
-            run_roi_demo()
-        except Exception as ex:
-            print("ROI demo error:", ex)
-
-    if run_crater_demo:
-        print("\n[2/4] Running Crater / Hazard Detection...")
-        try:
-            run_crater_demo()
-        except Exception as ex:
-            print("Crater demo error:", ex)
-
-    if run_rl_demo:
-        print("\n[3/4] Running RL Path Planning + Physics...")
-        try:
-            run_rl_demo()
-        except Exception as ex:
-            print("RL demo error:", ex)
-
-    if run_formation_demo:
-        print("\n[4/4] Running Multi-Rover Path Formation...")
-        try:
-            run_formation_demo()
-        except Exception as ex:
-            print("Formation demo error:", ex)
-
-    print("\n" + "="*60)
-    print("All demos completed!")
-    print("For realistic physics, dynamics, and sensor simulation → NVIDIA Isaac Sim")
-    print("="*60)
+    print("\n" + "="*55)
+    print("LUNAR 2024 - COLAB RUNNER (standalone mode)")
+    print("="*55)
+    _run_roi_standalone()
+    _run_crater_standalone()
+    _run_rl_standalone()
+    _run_formation_standalone()
+    print("\nAll done! For richer versions, you can also %run the individual main.py files.")
+    print("For real physics, wheel-terrain interaction, sensors etc. → use NVIDIA Isaac Sim")
 
 
 if __name__ == "__main__":

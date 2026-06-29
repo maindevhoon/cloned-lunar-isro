@@ -87,16 +87,20 @@ drive.mount('/content/drive')
 
 ---
 
-## Alternative: GitHub (Best for repeated use / team)
+## GitHub (Recommended - what you're using now)
 
-1. Push this folder to a GitHub repo.
-2. In Colab, just do:
+Since you're cloning from GitHub:
 
 ```python
-!git clone https://github.com/YOUR_USERNAME/lunar-2024-isro.git
-%cd lunar-2024-isro/lunar
+!git clone https://github.com/maindevhoon/cloned-lunar-isro.git
+%cd cloned-lunar-isro
 !pip install -q -r requirements.txt
+
+import colab_runner
+colab_runner.run_everything()
 ```
+
+This is the cleanest way and what you should use going forward.
 
 ---
 
@@ -118,9 +122,9 @@ drive.mount('/content/drive')
 Paste this into a fresh Colab notebook:
 
 ```python
-# === LUNAR 2024 → COLAB STARTER ===
-!unzip -q lunar-2024-project.zip   # only if you uploaded the zip
-%cd lunar
+# === LUNAR 2024 → COLAB STARTER (GitHub clone) ===
+!git clone https://github.com/maindevhoon/cloned-lunar-isro.git
+%cd cloned-lunar-isro
 !pip install -q -r requirements.txt
 
 import colab_runner
