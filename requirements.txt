@@ -1,0 +1,10 @@
+gymnasium>=0.29
+torch>=2.0
+numpy
+matplotlib
+opencv-python-headless
+scikit-learn
+scipy
+Pillow
+scikit-image
+spectral
